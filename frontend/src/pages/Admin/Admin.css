@@ -594,20 +594,26 @@
     border-radius: var(--border-radius-card);
     overflow: hidden;
   }
-  .admin-table td {
+  .admin-table td[data-label] {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     position: relative;
-    padding: 1rem !important;
-    padding-left: 45% !important;
+    padding: 0.85rem 1rem !important;
+    padding-left: 40% !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     text-align: right;
+    min-height: 3rem;
+  }
+  .admin-table td:not([data-label]) {
+    display: block;
+    text-align: center;
+    padding: 2rem 1rem !important;
   }
   .admin-table td:last-child {
     border-bottom: none;
   }
-  .admin-table td::before {
+  .admin-table td[data-label]::before {
     content: attr(data-label);
     position: absolute;
     left: 1rem;
@@ -618,11 +624,13 @@
     color: var(--color-text-secondary);
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    width: 40%;
+    width: 35%;
     text-align: left;
   }
-  .admin-table-actions {
+  .admin-table-actions, .admin-actions {
+    display: flex;
     justify-content: flex-end;
+    gap: 0.5rem;
     width: 100%;
   }
 }
