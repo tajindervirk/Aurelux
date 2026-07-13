@@ -21,6 +21,7 @@ const tmdbRoutes = require('./routes/tmdb.routes');
 
 // Initialize Express app
 const app = express();
+app.set('trust proxy', 1);
 
 // Use Helmet for basic security headers & CSP for the video player and external APIs
 app.use(helmet({
