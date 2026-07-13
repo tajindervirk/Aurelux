@@ -62,7 +62,14 @@ const TVDetail = () => {
   };
 
   if (detailLoading) return <div className="detail-page detail-page--skeleton" />;
-  if (error || !currentTV) return <div className="detail-page__error"><button onClick={() => navigate(-1)} className="hero__btn hero__btn--primary">Go Back</button></div>;
+  if (error || !currentTV) {
+    return (
+      <div className="detail-page__error">
+        <h2>Oops! We couldn't find that show.</h2>
+        <button onClick={() => navigate(-1)} className="hero__btn hero__btn--primary">Go Back</button>
+      </div>
+    );
+  }
 
   const handleWatch = (seasonNum = 1, episodeNum = 1) => {
     openPlayer({

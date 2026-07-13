@@ -253,17 +253,28 @@ const moviesSlice = createSlice({
     // Detail pages
     builder.addCase(fetchMovieDetails.pending, (state) => {
       state.detailLoading = true;
+      state.error = null;
     });
     builder.addCase(fetchMovieDetails.fulfilled, (state, action) => {
       state.detailLoading = false;
       state.currentMovie = action.payload;
     });
+    builder.addCase(fetchMovieDetails.rejected, (state, action) => {
+      state.detailLoading = false;
+      state.error = action.error.message;
+    });
+
     builder.addCase(fetchTVDetails.pending, (state) => {
       state.detailLoading = true;
+      state.error = null;
     });
     builder.addCase(fetchTVDetails.fulfilled, (state, action) => {
       state.detailLoading = false;
       state.currentTV = action.payload;
+    });
+    builder.addCase(fetchTVDetails.rejected, (state, action) => {
+      state.detailLoading = false;
+      state.error = action.error.message;
     });
   },
 });
