@@ -156,33 +156,30 @@ const MoviesTab = () => {
             ) : movies.length > 0 ? (
               movies.map((movie) => (
                 <tr key={movie._id}>
-                  <td>
+                  <td data-label="Poster">
                     <img 
-                      src={movie.posterPath?.startsWith('http') ? movie.posterPath : `https://image.tmdb.org/t/p/w200${movie.posterPath}`}
+                      src={movie.posterPath ? `https://image.tmdb.org/t/p/w200${movie.posterPath}` : '/placeholder-poster.png'} 
                       alt={movie.title}
                       className="admin-table-poster"
-                      onError={(e) => { e.target.src = '/placeholder-poster.jpg'; }}
                     />
                   </td>
-                  <td>
-                    <div className="admin-table-title" title={movie.title}>
-                      {movie.title.length > 30 ? movie.title.substring(0, 30) + '...' : movie.title}
+                  <td data-label="Title">
+                    <span className="admin-table-text" style={{ fontWeight: 600 }}>{movie.title}</span>
+                  </td>
+                  <td data-label="Category">
+                    <span className="admin-badge-category">{movie.mediaType.toUpperCase()}</span>
+                  </td>
+                  <td data-label="Genres">
+                    <div className="admin-genres-stack">
+                      {movie.genres?.map(g => <span key={g} className="admin-badge-genre">{g}</span>)}
                     </div>
                   </td>
-                  <td>
-                    <span className={`admin-badge-category admin-badge--${movie.mediaType}`}>{movie.mediaType?.toUpperCase()}</span>
-                  </td>
-                  <td>
-                    <span className="admin-table-text">
-                      {movie.genres?.slice(0, 2).join(', ') || '-'}
+                  <td data-label="Release Date">
+                    <span className="admin-date">
+                      {movie.releaseDate ? new Date(movie.releaseDate).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' }) : 'N/A'}
                     </span>
                   </td>
-                  <td>
-                    <span className="admin-table-text">
-                      {movie.releaseDate ? new Date(movie.releaseDate).toLocaleDateString() : '-'}
-                    </span>
-                  </td>
-                  <td>
+                  <td data-label="Actions">
                     <div className="admin-table-actions">
                       <button className="admin-icon-btn" onClick={() => openModal(movie)} title="Edit">✏️</button>
                       <button className="admin-icon-btn admin-icon-btn--danger" onClick={() => handleDelete(movie._id)} title="Delete">🗑️</button>

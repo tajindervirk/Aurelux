@@ -577,6 +577,52 @@
     border-radius: 0;
     border-left: none;
     border-right: none;
-    margin: 0 -1rem; 
+    margin: 0 -1rem;
+    background: transparent;
+  }
+  .admin-table thead {
+    display: none;
+  }
+  .admin-table, .admin-table tbody, .admin-table tr, .admin-table td {
+    display: block;
+    width: 100%;
+  }
+  .admin-table tr {
+    margin-bottom: 1.5rem;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-card);
+    overflow: hidden;
+  }
+  .admin-table td {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    padding: 1rem !important;
+    padding-left: 45% !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: right;
+  }
+  .admin-table td:last-child {
+    border-bottom: none;
+  }
+  .admin-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    width: 40%;
+    text-align: left;
+  }
+  .admin-table-actions {
+    justify-content: flex-end;
+    width: 100%;
   }
 }

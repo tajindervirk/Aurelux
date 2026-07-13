@@ -141,16 +141,16 @@ const ProvidersTab = () => {
           <tbody>
             {providers.map(provider => (
               <tr key={provider._id}>
-                <td><code>{provider.providerId}</code></td>
-                <td><strong>{provider.name}</strong></td>
-                <td><span className="admin-badge-type">{provider.animeIdType.toUpperCase()}</span></td>
-                <td>
+                <td data-label="ID"><code>{provider.providerId}</code></td>
+                <td data-label="Name"><strong>{provider.name}</strong></td>
+                <td data-label="Anime ID Type"><span className="admin-badge-type">{provider.animeIdType.toUpperCase()}</span></td>
+                <td data-label="Status">
                   <span className={`admin-status ${provider.isActive ? 'admin-status--active' : 'admin-status--inactive'}`}>
                     {provider.isActive ? 'Active' : 'Inactive'}
                   </span>
                 </td>
-                <td>
-                  <div className="admin-table-actions">
+                <td data-label="Actions">
+                  <div className="admin-actions">
                     <button className="admin-icon-btn" onClick={() => handleOpenModal(provider)} title="Edit">✏️</button>
                     <button className="admin-icon-btn admin-icon-btn--danger" onClick={() => handleDelete(provider._id)} title="Delete">🗑️</button>
                   </div>

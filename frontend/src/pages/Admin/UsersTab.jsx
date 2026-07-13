@@ -114,7 +114,7 @@ const UsersTab = () => {
             ) : users.length > 0 ? (
               users.map((user) => (
                 <tr key={user._id}>
-                  <td>
+                  <td data-label="User">
                     <div className="admin-user-cell">
                       <div className="admin-user-avatar">
                         {user.name.charAt(0).toUpperCase()}
@@ -122,17 +122,17 @@ const UsersTab = () => {
                       <span className="admin-table-text" style={{ fontWeight: 500 }}>{user.name}</span>
                     </div>
                   </td>
-                  <td>
+                  <td data-label="Email">
                     <span className="admin-table-text" title={user.email}>
                       {user.email.length > 25 ? user.email.substring(0, 25) + '...' : user.email}
                     </span>
                   </td>
-                  <td>
+                  <td data-label="Role">
                     <span className={`admin-badge-role admin-badge-role--${user.role}`}>
                       {user.role.toUpperCase()}
                     </span>
                   </td>
-                  <td>
+                  <td data-label="Status">
                     {(() => {
                       const isOnline = user.lastActive && (new Date() - new Date(user.lastActive)) < 15 * 60 * 1000; // 15 mins
                       let statusText = 'Offline';
@@ -153,29 +153,27 @@ const UsersTab = () => {
                       );
                     })()}
                   </td>
-                  <td>
-                    <span className="admin-table-text" style={{ color: 'var(--color-gold)' }}>
+                  <td data-label="Browser/Device">
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
                       {user.browserUsed || 'Unknown'} {user.deviceType ? `(${user.deviceType})` : ''}
-                    </span>
+                    </div>
                   </td>
-                  <td>
-                    <span className="admin-table-text">
-                      {formatTimeSpent(user.totalTimeSpent)}
-                    </span>
+                  <td data-label="Time Spent">
+                    <span className="admin-table-text">{formatTimeSpent(user.totalTimeSpent)}</span>
                   </td>
-                  <td>
+                  <td data-label="Adblocker">
                     {user.adblockerInstalled ? (
                       <span className="admin-badge-status active">Installed</span>
                     ) : (
                       <span className="admin-table-text" style={{ opacity: 0.5 }}>No</span>
                     )}
                   </td>
-                  <td style={{ whiteSpace: 'nowrap' }}>
+                  <td data-label="Joined" style={{ whiteSpace: 'nowrap' }}>
                     <span className="admin-table-text">
                       {new Date(user.createdAt).toLocaleDateString(undefined, { year: 'numeric', month: 'short' })}
                     </span>
                   </td>
-                  <td style={{ whiteSpace: 'nowrap' }}>
+                  <td data-label="Actions" style={{ whiteSpace: 'nowrap' }}>
                     <div className="admin-table-actions">
                       {user.role !== 'admin' && (
                         <button 
