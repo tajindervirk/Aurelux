@@ -1,0 +1,106 @@
+.trailer-modal__backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: calc(var(--z-modal) + 2);
+  padding: 1.5rem;
+}
+
+.trailer-modal__content {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  background: #000;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.trailer-modal__close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.trailer-modal__close:hover {
+  color: var(--color-gold);
+}
+
+.trailer-modal__video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.trailer-modal__video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Fallback UI for trailers that fail to load */
+.trailer-modal__error {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 10, 15, 0.9);
+  color: var(--color-text-primary);
+  text-align: center;
+  gap: 0.5rem;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.trailer-modal__error svg {
+  margin-bottom: 0.5rem;
+  opacity: 0.8;
+}
+
+.trailer-modal__error p {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.trailer-modal__error-btn {
+  padding: 0.85rem 2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: var(--border-radius-btn);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  font-family: var(--font-body);
+  background: transparent;
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border-hover);
+  margin-top: 1rem;
+  text-decoration: none;
+}
+
+.trailer-modal__error-btn:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}

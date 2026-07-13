@@ -1,0 +1,98 @@
+.adblock-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.adblock-modal {
+  background: #151515;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 480px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 24px 48px rgba(0,0,0,0.5);
+}
+
+.adblock-modal__icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.adblock-modal__title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.adblock-modal__desc {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.adblock-modal__desc strong {
+  color: #fff;
+}
+
+.adblock-modal__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.adblock-modal__btn {
+  padding: 14px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.adblock-modal__btn--install {
+  background: var(--color-gold);
+  color: #000;
+}
+
+.adblock-modal__btn--install:hover {
+  background: #f0c354;
+  transform: translateY(-2px);
+}
+
+.adblock-modal__btn--continue {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.adblock-modal__btn--continue:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.adblock-modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.5);
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.adblock-modal__close:hover {
+  color: #fff;
+}

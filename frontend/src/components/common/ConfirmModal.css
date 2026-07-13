@@ -1,0 +1,103 @@
+.confirm-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(5px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirm-modal {
+  width: 90%;
+  max-width: 450px;
+  padding: 2rem;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-card);
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.confirm-modal-title {
+  margin: 0 0 1rem;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--color-gold);
+}
+
+.confirm-modal-message {
+  margin: 0 0 1.5rem;
+  font-size: 1rem;
+  color: var(--color-text-primary);
+  line-height: 1.5;
+}
+
+.confirm-modal-content {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.confirm-modal-content textarea {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+  font-family: inherit;
+  resize: vertical;
+  min-height: 80px;
+}
+
+.confirm-modal-content textarea:focus {
+  outline: none;
+  border-color: var(--color-gold);
+}
+
+.confirm-modal-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.confirm-btn-cancel,
+.confirm-btn-confirm {
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+}
+
+.confirm-btn-cancel {
+  background: transparent;
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-text-secondary);
+}
+
+.confirm-btn-cancel:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-text-primary);
+}
+
+.confirm-btn-confirm {
+  background: var(--color-gold);
+  color: #000;
+}
+
+.confirm-btn-confirm:hover {
+  background: var(--color-gold-light);
+  transform: translateY(-2px);
+}
+
+.confirm-btn-danger {
+  background: #ef4444;
+  color: white;
+}
+
+.confirm-btn-danger:hover {
+  background: #dc2626;
+}

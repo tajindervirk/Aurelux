@@ -1,0 +1,153 @@
+.movie-card {
+  position: relative;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-card);
+  overflow: hidden;
+  cursor: pointer;
+  width: 100%;
+  will-change: transform;
+  transition: var(--transition-smooth);
+}
+
+.movie-card--skeleton {
+  background: var(--color-bg-secondary);
+}
+
+.movie-card__poster-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.movie-card__poster {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+}
+
+.movie-card__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(10, 10, 15, 0.98));
+  padding: 1.25rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  will-change: transform;
+}
+
+.movie-card__title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+
+.movie-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+}
+
+.movie-card__year {
+  color: var(--color-text-secondary);
+}
+
+.movie-card__rating {
+  color: var(--color-gold);
+  font-weight: 600;
+}
+
+.movie-card__badge {
+  display: inline-block;
+  width: fit-content;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--border-radius-full);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.movie-card__badge--movie {
+  background: var(--color-gold);
+  color: #0a0a0f;
+}
+
+.movie-card__badge--tv {
+  background: var(--color-gold);
+  color: #0a0a0f;
+}
+
+.movie-card__badge--anime {
+  background: #7c3aed;
+  color: #ffffff;
+}
+
+.movie-card__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
+}
+
+.movie-card__watch-btn {
+  width: 100%;
+  padding: 0.6rem;
+  background: var(--color-gold);
+  color: #0a0a0f;
+  border: none;
+  border-radius: var(--border-radius-btn);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  font-family: var(--font-body);
+}
+
+.movie-card__watch-btn:hover {
+  background: var(--color-gold-light);
+  box-shadow: 0 0 15px rgba(201, 168, 76, 0.3);
+}
+
+.movie-card__icon-btns {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.movie-card__icon-btn {
+  flex: 1;
+  padding: 0.5rem;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-btn);
+  color: var(--color-text-secondary);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.movie-card__icon-btn:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+.movie-card__icon-btn--active {
+  color: var(--color-gold);
+  border-color: var(--color-gold);
+  background: rgba(201, 168, 76, 0.1);
+}
+
+.movie-card__skeleton-info {
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}

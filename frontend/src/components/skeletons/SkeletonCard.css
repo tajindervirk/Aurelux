@@ -1,0 +1,31 @@
+.skeleton-card {
+  width: 100%;
+  border-radius: var(--border-radius-card);
+  overflow: hidden;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+}
+
+.skeleton-card__poster {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+}
+
+.skeleton-card__info {
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skeleton-card__title {
+  width: 80%;
+  height: 1rem;
+  border-radius: 4px;
+}
+
+.skeleton-card__sub {
+  width: 50%;
+  height: 0.8rem;
+  border-radius: 4px;
+}

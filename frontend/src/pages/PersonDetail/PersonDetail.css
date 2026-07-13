@@ -1,0 +1,141 @@
+.person-page {
+  padding: 80px 5% 5rem;
+  min-height: 100vh;
+  background-color: var(--color-bg-primary);
+}
+
+.person-detail-loading,
+.person-detail-error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 2rem;
+}
+
+.person-detail-error h2 {
+  font-family: var(--font-display);
+  color: var(--color-gold);
+  font-size: 2rem;
+}
+
+.person__content {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+/* Left Sidebar */
+.person__left {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.person__poster {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.person__info-box {
+  padding: 1.5rem;
+}
+
+.person__info-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: var(--color-gold);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
+}
+
+.person__info-item {
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.person__info-item strong {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.person__info-item span {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+}
+
+/* Right Content */
+.person__right {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.person__title {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  margin: 0 0 2rem;
+  color: var(--color-text-primary);
+  line-height: 1.1;
+}
+
+.person__section-title {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--color-gold);
+}
+
+.person__bio {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  max-width: 900px;
+}
+
+.person__bio p {
+  margin-bottom: 1rem;
+}
+
+.person__bio p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .person__content {
+    grid-template-columns: 1fr;
+  }
+  
+  .person__left {
+    align-items: center;
+  }
+  
+  .person__poster {
+    max-width: 300px;
+  }
+  
+  .person__info-box {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .person__title {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  
+  .person__section-title {
+    text-align: center;
+  }
+}
