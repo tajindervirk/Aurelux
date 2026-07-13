@@ -133,9 +133,25 @@ const UsersTab = () => {
                     </span>
                   </td>
                   <td>
-                    <span className={`admin-badge-status ${user.isBanned ? 'banned' : 'active'}`}>
-                      {user.isBanned ? 'Banned' : 'Active'}
-                    </span>
+                    {(() => {
+                      const isOnline = user.lastActive && (new Date() - new Date(user.lastActive)) < 15 * 60 * 1000; // 15 mins
+                      let statusText = 'Offline';
+                      let statusClass = 'offline';
+                      
+                      if (user.isBanned) {
+                        statusText = 'Banned';
+                        statusClass = 'banned';
+                      } else if (isOnline) {
+                        statusText = 'Active';
+                        statusClass = 'active';
+                      }
+                      
+                      return (
+                        <span className={`admin-badge-status ${statusClass}`}>
+                          {statusText}
+                        </span>
+                      );
+                    })()}
                   </td>
                   <td>
                     <span className="admin-table-text" style={{ color: 'var(--color-gold)' }}>

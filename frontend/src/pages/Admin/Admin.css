@@ -528,6 +528,8 @@
 .admin-badge-status.active::before { background: #22c55e; }
 .admin-badge-status.banned { color: #ef4444; }
 .admin-badge-status.banned::before { background: #ef4444; }
+.admin-badge-status.offline { color: #9ca3af; }
+.admin-badge-status.offline::before { background: #9ca3af; }
 
 .admin-btn-action {
   border: none;

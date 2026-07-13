@@ -38,6 +38,11 @@ const protect = async (req, res, next) => {
       });
     }
 
+    // Update lastActive (throttle to 1 minute to save DB writes)
+    if (!user.lastActive || (Date.now() - new Date(user.lastActive).getTime()) > 60000) {
+      User.updateOne({ _id: user._id }, { lastActive: new Date() }).catch(err => console.error(err));
+    }
+
     req.user = user;
     next();
   } catch (err) {
@@ -68,6 +73,10 @@ const optionalAuth = async (req, res, next) => {
     const user = await User.findById(decoded.id);
 
     if (user && !user.isBanned) {
+      // Update lastActive (throttle to 1 minute to save DB writes)
+      if (!user.lastActive || (Date.now() - new Date(user.lastActive).getTime()) > 60000) {
+        User.updateOne({ _id: user._id }, { lastActive: new Date() }).catch(err => console.error(err));
+      }
       req.user = user;
     }
 
