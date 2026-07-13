@@ -18,7 +18,7 @@ const setTokenCookie = (res, token) => {
     expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), // 7 days matching JWT expire
     httpOnly: true, // Prevents XSS attacks
     secure: process.env.NODE_ENV === 'production',
-    sameSite: 'strict', // Prevents CSRF
+    sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'strict', // 'none' required for cross-domain cookies on Vercel/Render
   };
   res.cookie('jwt', token, options);
 };
