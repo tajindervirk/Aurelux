@@ -569,16 +569,16 @@
     flex-direction: column;
     align-items: stretch;
     gap: 1rem;
+    margin-bottom: 1.5rem !important;
   }
   .admin-search-wrap {
     width: 100%;
   }
-  .admin-table-container {
-    border-radius: 0;
-    border-left: none;
-    border-right: none;
-    margin: 0 -1rem;
-    background: transparent;
+  .admin-table-container, .admin-table-wrapper {
+    border: none !important;
+    margin: 0 !important;
+    background: transparent !important;
+    padding: 0 !important;
   }
   .admin-table thead {
     display: none;
@@ -595,42 +595,42 @@
     overflow: hidden;
   }
   .admin-table td[data-label] {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    position: relative;
-    padding: 0.85rem 1rem !important;
-    padding-left: 40% !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    text-align: right;
-    min-height: 3rem;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 1rem !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    text-align: right !important;
+    min-height: 3.5rem !important;
+    gap: 1rem !important;
   }
   .admin-table td:not([data-label]) {
-    display: block;
-    text-align: center;
-    padding: 2rem 1rem !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 3rem 1rem !important;
+    color: var(--color-text-secondary) !important;
   }
   .admin-table td:last-child {
-    border-bottom: none;
+    border-bottom: none !important;
   }
   .admin-table td[data-label]::before {
-    content: attr(data-label);
-    position: absolute;
-    left: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--color-text-secondary);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    width: 35%;
-    text-align: left;
+    content: attr(data-label) !important;
+    position: relative !important;
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    color: var(--color-text-secondary) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    flex-shrink: 0 !important;
+    text-align: left !important;
+    max-width: 40% !important;
   }
   .admin-table-actions, .admin-actions {
-    display: flex;
-    justify-content: flex-end;
-    gap: 0.5rem;
-    width: 100%;
+    display: flex !important;
+    justify-content: flex-end !important;
+    gap: 0.5rem !important;
+    width: auto !important;
   }
 }
