@@ -60,7 +60,7 @@
 .hero__trailer-error p {
   font-family: var(--font-body);
   font-size: 1.1rem;
-  color: var(--color-text-secondary);
+  color: rgba(255, 255, 255, 0.7);
   margin: 0;
 }
 
@@ -144,6 +144,7 @@
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .hero__title {
@@ -151,7 +152,7 @@
   font-size: clamp(2.5rem, 6vw, 5rem);
   font-weight: 700;
   line-height: 1.1;
-  color: var(--color-text-primary);
+  color: #FFFFFF;
   margin: 0;
 }
 
@@ -186,7 +187,7 @@
 
 .hero__star {
   font-size: 1.1rem;
-  color: var(--color-text-secondary);
+  color: rgba(255, 255, 255, 0.4);
   transition: color 0.2s;
 }
 
@@ -196,14 +197,14 @@
 
 .hero__rating-value {
   font-size: 0.9rem;
-  color: var(--color-text-secondary);
+  color: rgba(255, 255, 255, 0.7);
   font-weight: 500;
 }
 
 .hero__overview {
   font-size: 0.95rem;
   line-height: 1.6;
-  color: var(--color-text-secondary);
+  color: rgba(255, 255, 255, 0.75);
   display: -webkit-box;
   -webkit-line-clamp: 2;
   line-clamp: 2;
