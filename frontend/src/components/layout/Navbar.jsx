@@ -375,13 +375,24 @@ const Navbar = () => {
             <div className="navbar__mobile-footer">
               {isAuthenticated ? (
                 <div className="navbar__mobile-user-section">
-                  <div className="navbar__mobile-user-info">
-                    <div className="navbar__avatar">{userInitial}</div>
-                    <span className="navbar__mobile-user-name">{user?.name}</span>
+                  <div className="navbar__mobile-user-top">
+                    <div className="navbar__mobile-user-info">
+                      <div className="navbar__avatar">{userInitial}</div>
+                      <span className="navbar__mobile-user-name">{user?.name}</span>
+                    </div>
+                    <button className="navbar__mobile-logout" onClick={handleLogout}>
+                      Logout
+                    </button>
                   </div>
-                  <button className="navbar__mobile-logout" onClick={handleLogout}>
-                    Logout
-                  </button>
+                  <div className="navbar__mobile-sublinks">
+                    <Link to="/favorites" className="navbar__mobile-sublink" onClick={() => setIsMobileMenuOpen(false)}>♥ Favorites</Link>
+                    <Link to="/watchlist" className="navbar__mobile-sublink" onClick={() => setIsMobileMenuOpen(false)}>◎ Watchlist</Link>
+                    <Link to="/history" className="navbar__mobile-sublink" onClick={() => setIsMobileMenuOpen(false)}>⏱ History</Link>
+                    <Link to="/reviews" className="navbar__mobile-sublink" onClick={() => setIsMobileMenuOpen(false)}>✎ My Reviews</Link>
+                    {user?.role === 'admin' && (
+                      <Link to="/admin" className="navbar__mobile-sublink" onClick={() => setIsMobileMenuOpen(false)}>⚙ Admin Dashboard</Link>
+                    )}
+                  </div>
                 </div>
               ) : (
                 <Link
