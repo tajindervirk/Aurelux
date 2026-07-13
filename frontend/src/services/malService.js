@@ -1,4 +1,5 @@
-const MAL_PROXY = '/api/mal';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api';
+const MAL_PROXY = `${API_BASE_URL}/mal`;
 
 const getCurrentSeason = () => {
   const month = new Date().getMonth();
